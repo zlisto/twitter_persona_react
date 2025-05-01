@@ -1,0 +1,48 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment files
+.env
+*.env
+
+# Jupyter Notebook checkpoints (if you use them)
+.ipynb_checkpoints
+
+# macOS hidden files
+.DS_Store
+
+# VSCode settings (if using VSCode)
+.vscode/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Streamlit logs
+.streamlit/config.toml
+.streamlit/secrets.toml
+.streamlit/*.json
+
+# Pytest cache
+.pytest_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# MyPy
+.mypy_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Other logs
+*.log
