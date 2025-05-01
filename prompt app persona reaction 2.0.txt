@@ -1,0 +1,26 @@
+App maker app maker, make me an app.  I want to make a Streamlit app that analzyes a Twitter user's tweets and then lets me simulate their reaction to different types of news articles, topics, or images.  My app will have the pages Home and Persona Reaction.  Put these in a static sidebar navigation menu.  Here is how the app will work.
+
+#Pages
+1) Home - on the Home page i will drag in a csv file of tweets that has columns text, favorite_count, view_count.  I want to load it into a dataframe df, then compute a new column engagement = favorite_count/view_count.  I will then compute the following state variables:
+
+    a) df = the tweet dataframe with the engagement column added
+    
+    b) personality_string = a string that summarizes the person's personality which is computed with get_personality_string(df) which returns a string and is already in my utils.py file.
+
+Have a spinning wheel say "Analyzing personality..." while computing these variables.  Then print out "Analysis complete!".  
+In the terminal, print each state variable after it is computed for debugging.
+
+Then display personality_string in nicely formatted font, Easter style with bunnies in the design.
+Title it "Personality Analysis"
+
+2) Persona Reaction - this page is a bit complicated.  On the top I want a text box where I can input text that describes the content I want the persona to react to.  Title this box "Content".  Below this I want a button titled "React".  In content box I can drag in a file (PDF or image), and input text.  Image formats are png, jpg, jpeg, webp.  When I drag the file, make the whole box be where I can drag it to and make the screen lighter when I drag it in.  After I drag it in, put an icon there that is pink and says the filename.  If the file is an image, show the image below the content box and above the react button with a width of 400.   Define the following state variables:
+    a) file_path - If a file is uploaded, let the file path be file_path, otherwise it is None 
+    b) content_text - if there is text input, let the text be content_text.  
+
+When I click React, call the function get_reaction(content_text, file_path, personality_string ) in my utils.py file that I already wrote that returns a JSON object with keys "reaction_text" and "reaction_score". reaction_text is a string and reaction_score is a number between 0 and 100.  Have a spinning wheel say "Reacting..." when get_reaction is called.  After that display this reaction_text in the Reaction text box in a nice easy to read font dark background white font size 18 sans serif.  Next to the Reaction text box, put a vertical thermometer bar that goes from 0 to 100 and fill it in red up to the value reaction_score.   Make the bar thick, and show the numbers 0, 100, and the value of the reaction_score. Put a sad bunnny at 0 and a happy bunny at 100. 
+
+Add a button that says "Reset" next the "React" button that will clear out the file_path and content_text variables and remove the file icon as well so the content box is empty.
+
+Reset all the state variables each time I upload a new csv of tweets on Home.
+
+Give this app a cool title to attract advertising executives.
